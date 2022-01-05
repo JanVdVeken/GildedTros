@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace GildedTros.App
 {
     public class GildedTros
     {
-        IList<Item> Items;
+        public IList<Item> Items { get; }
+
         public GildedTros(IList<Item> Items)
         {
-            this.Items = Items;
+            this.Items = Items ?? throw new NullReferenceException(nameof(Items));
         }
 
         public void UpdateQuality()
