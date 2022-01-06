@@ -3,9 +3,7 @@ using System.IO;
 using System.Text;
 using ApprovalTests;
 using ApprovalTests.Reporters;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Xunit;
-using GildedTros.App;
 
 namespace GildedTros.Test.Approval
 {
@@ -19,7 +17,7 @@ namespace GildedTros.Test.Approval
             Console.SetOut(new StringWriter(fakeOutput));
             Console.SetIn(new StringReader("a\n"));
             
-            GildedTros.App.Program.Main(new string[] { });
+            App.Program.Main(new string[] { });
             var output = fakeOutput.ToString();
 
             Approvals.Verify(output);
