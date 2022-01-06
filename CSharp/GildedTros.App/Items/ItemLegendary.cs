@@ -16,7 +16,8 @@ namespace GildedTros.App.Items
         }
         public void Age()
         {
-            throw new System.NotImplementedException();
+            Quality = Quality;
+            SellIn = SellIn;
         }
     }
 }

@@ -22,6 +22,11 @@ namespace GildedTros.App
                     var currentItem = Items[i] as ItemGettingBetterOverTime;
                     currentItem.Age();
                 }
+                else if (Items[i] is ItemLegendary)
+                {
+                    var currentItem = Items[i] as ItemLegendary;
+                    currentItem.Age();
+                }
                 else
                 {
                     if (Items[i].Name != "Backstage passes for Re:factor"
@@ -29,10 +34,7 @@ namespace GildedTros.App
                     {
                         if (Items[i].Quality > 0)
                         {
-                            if (Items[i].Name != "B-DAWG Keychain")
-                            {
-                                Items[i].Quality = Items[i].Quality - 1;
-                            }
+                            Items[i].Quality = Items[i].Quality - 1;
                         }
                     }
                     else
@@ -62,12 +64,7 @@ namespace GildedTros.App
                             }
                         }
                     }
-
-                    if (Items[i].Name != "B-DAWG Keychain")
-                    {
-                        Items[i].SellIn = Items[i].SellIn - 1;
-                    }
-
+                    Items[i].SellIn = Items[i].SellIn - 1;
                     if (Items[i].SellIn < 0)
                     {
                         if (Items[i].Name != "Backstage passes for Re:factor"
@@ -75,10 +72,7 @@ namespace GildedTros.App
                             {
                                 if (Items[i].Quality > 0)
                                 {
-                                    if (Items[i].Name != "B-DAWG Keychain")
-                                    {
-                                        Items[i].Quality = Items[i].Quality - 1;
-                                    }
+                                    Items[i].Quality = Items[i].Quality - 1;
                                 }
                             }
                             else
