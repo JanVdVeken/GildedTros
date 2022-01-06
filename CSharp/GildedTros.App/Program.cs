@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GildedTros.App.Items;
 
 namespace GildedTros.App
 {
@@ -33,7 +34,7 @@ namespace GildedTros.App
                 Console.WriteLine("name, sellIn, quality");
                 for (var j = 0; j < Items.Count; j++)
                 {
-                    System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
+                    Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
                 }
                 Console.WriteLine("");
                 app.UpdateQuality();

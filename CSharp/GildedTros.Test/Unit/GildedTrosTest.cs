@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GildedTros.App;
+using GildedTros.App.Items;
 using Xunit;
 
 namespace GildedTros.Test.Unit
@@ -10,7 +11,7 @@ namespace GildedTros.Test.Unit
         [Fact]
         public void GildedTrosCtor_GivenNull_ShouldThrowNewException()
         {
-            Assert.Throws<NullReferenceException>(() => new App.GildedTros(null));
+            Assert.Throws<ArgumentNullException>(() => new App.GildedTros(null));
         }
         [Fact]
         public void GildedTrosCtor_GivenListWithOneItem_ShouldContainOneItem()

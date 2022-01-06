@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GildedTros.App.Items;
 
 namespace GildedTros.App
 {
@@ -7,9 +8,9 @@ namespace GildedTros.App
     {
         public IList<Item> Items { get; }
 
-        public GildedTros(IList<Item> Items)
+        public GildedTros(IList<Item> items)
         {
-            this.Items = Items ?? throw new NullReferenceException(nameof(Items));
+            Items = items ?? throw new ArgumentNullException(nameof(items));
         }
 
         public void UpdateQuality()
