@@ -1,7 +1,6 @@
 ﻿using System;
 using GildedTros.App.Items;
 using GildedTros.Test.Unit.Helper;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.EventHandlers;
 using Xunit;
 
 namespace GildedTros.Test.Unit
@@ -34,7 +33,7 @@ namespace GildedTros.Test.Unit
             Assert.Equal(TestItems.SomeQualityGreaterThanZero,itemLegendary.Quality);
         }
         [Fact]
-        public void Age_GivenSomeSellin_ShouldNotChangeSellin()
+        public void Age_GivenSomeSellIn_ShouldNotChangeSellIn()
         {
             var itemLegendary = new ItemLegendary(TestItems.SomeName)
             {
@@ -44,6 +43,21 @@ namespace GildedTros.Test.Unit
             itemLegendary.Age();
             
             Assert.Equal(TestItems.SomeSellInGreaterThanZero,itemLegendary.SellIn);
+        }
+        [Fact]
+        public void AgeMultipleTimes_WithQualityFifty_ShouldMaxBeFifty()
+        {
+            var itemLegendary = new ItemLegendary(TestItems.SomeName)
+            {
+                Quality = 50,
+                SellIn = 1
+            };
+            
+            itemLegendary.Age();
+            itemLegendary.Age();
+            itemLegendary.Age();
+
+            Assert.Equal(50,itemLegendary.Quality);
         }
     }
 }

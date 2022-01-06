@@ -85,6 +85,8 @@ namespace GildedTros.Test.Unit
                 SellIn = 1
             };
             itemGettingBetterOverTime.Age();
+            itemGettingBetterOverTime.Age();
+            itemGettingBetterOverTime.Age();
 
             Assert.Equal(50,itemGettingBetterOverTime.Quality);
         }
