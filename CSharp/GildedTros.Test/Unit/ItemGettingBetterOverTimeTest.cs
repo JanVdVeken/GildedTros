@@ -20,7 +20,7 @@ namespace GildedTros.Test.Unit
             Assert.Equal(TestItems.SomeName,itemGettingBetterOverTime.Name);
         }
         [Fact]
-        public void Age_WithSellInGreaterthanZero_ShouldDecreaseSellinValue()
+        public void Age_GivenSellInGreaterThanZero_ShouldDecreaseSellInValue()
         {
             var itemGettingBetterOverTime = new ItemGettingBetterOverTime(TestItems.SomeName)
             {
@@ -33,7 +33,7 @@ namespace GildedTros.Test.Unit
             Assert.Equal(9,itemGettingBetterOverTime.SellIn);
         }
         [Fact]
-        public void Age_WithSellInGreaterthanZero_ShouldIncreaseQualityByOne()
+        public void Age_GivenSellInGreaterThanZero_ShouldIncreaseQualityByOne()
         {
             var itemGettingBetterOverTime = new ItemGettingBetterOverTime(TestItems.SomeName)
             {
@@ -46,7 +46,7 @@ namespace GildedTros.Test.Unit
             Assert.Equal(11,itemGettingBetterOverTime.Quality);
         }
         [Fact]
-        public void Age_WithSellInLowerthanZero_ShouldIncreaseQualityByTwo()
+        public void Age_GivenSellInLowerThanZero_ShouldIncreaseQualityByTwo()
         {
             var itemGettingBetterOverTime = new ItemGettingBetterOverTime(TestItems.SomeName)
             {
@@ -60,24 +60,24 @@ namespace GildedTros.Test.Unit
         }
 
         [Fact]
-        public void AgeMultipleTimes_WithSellInLowerthanZero_ShouldOnlyMultiplyQualityOnce()
+        public void AgeMultipleTimes_GivenSellInLowerThanZero_ShouldOnlyMultiplyQualityOnce()
         {
             var itemGettingBetterOverTime = new ItemGettingBetterOverTime(TestItems.SomeName)
             {
                 Quality = 10,
                 SellIn = 1
             };
-            var expextedResult = itemGettingBetterOverTime.QualitySpeed * 2;
+            var expectedResult = itemGettingBetterOverTime.QualitySpeed * 2;
             
             itemGettingBetterOverTime.Age();
             itemGettingBetterOverTime.Age();
             itemGettingBetterOverTime.Age();
             itemGettingBetterOverTime.Age();
             
-            Assert.Equal(expextedResult,itemGettingBetterOverTime.QualitySpeed);
+            Assert.Equal(expectedResult,itemGettingBetterOverTime.QualitySpeed);
         }
         [Fact]
-        public void AgeMultipleTimes_WithQualityFifty_ShouldMaxBeFifty()
+        public void AgeMultipleTimes_GivenQualityFifty_ShouldMaxBeFifty()
         {
             var itemGettingBetterOverTime = new ItemGettingBetterOverTime(TestItems.SomeName)
             {
@@ -88,7 +88,20 @@ namespace GildedTros.Test.Unit
             itemGettingBetterOverTime.Age();
             itemGettingBetterOverTime.Age();
 
-            Assert.Equal(50,itemGettingBetterOverTime.Quality);
+            Assert.True(50 >= itemGettingBetterOverTime.Quality);
+        }
+        [Fact]
+        public void Age_GivenSomeNegativeQuality_ShouldPutQualityToZero()
+        {
+            var itemGettingBetterOverTime = new ItemGettingBetterOverTime(TestItems.SomeName)
+            {
+                Quality = TestItems.SomeQualityLessThanZero,
+                SellIn = TestItems.SomeSellInGreaterThanZero
+            };
+                
+            itemGettingBetterOverTime.Age();
+                
+            Assert.Equal(0,itemGettingBetterOverTime.Quality);
         }
         
         

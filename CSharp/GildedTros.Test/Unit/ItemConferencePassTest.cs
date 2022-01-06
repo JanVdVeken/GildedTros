@@ -69,10 +69,22 @@ namespace GildedTros.Test.Unit
                 Quality = 10
             };
             
-            
             itemConferencePass.Age();
             
             Assert.Equal(13,itemConferencePass.Quality);
+        }
+        [Fact]
+        public void Age_GivenSomeNegativeQuality_ShouldPutQualityToZero()
+        {
+            var itemGettingBetterOverTime = new ItemConferencePass(TestItems.SomeName)
+            {
+                Quality = TestItems.SomeQualityLessThanZero,
+                SellIn = TestItems.SomeSellInGreaterThanZero
+            };
+                
+            itemGettingBetterOverTime.Age();
+                
+            Assert.Equal(0,itemGettingBetterOverTime.Quality);
         }
         
     }

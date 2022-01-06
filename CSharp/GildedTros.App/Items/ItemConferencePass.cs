@@ -29,10 +29,18 @@ namespace GildedTros.App.Items
                 _isIncreaseBelowFive = true;
                 QualitySpeed += 1;
             }
-            Quality = Math.Min(Quality + QualitySpeed,50);
+
+            Quality += QualitySpeed;
+            Quality = Math.Min(Quality,50);
+            Quality = Math.Max(Quality,0);
             if (SellIn <= 0) Quality = 0;
             
             SellIn--;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
         }
     }
 }

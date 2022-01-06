@@ -16,8 +16,13 @@ namespace GildedTros.App.Items
         }
         public void Age()
         {
-            Quality = Quality;
+            Quality = 80;
             SellIn = SellIn;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
         }
     }
 }

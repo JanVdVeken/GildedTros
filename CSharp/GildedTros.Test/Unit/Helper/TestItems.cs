@@ -9,6 +9,7 @@
         public static int SomeSellInGreaterThanTen = 20;
         public static int SomeSellInGreaterBelowTenGreaterThanFive = 8;
         public static int SomeSellInLessThanZero = -10;
+        public static int SomeQualityLessThanZero = -10;
     }
 }
 

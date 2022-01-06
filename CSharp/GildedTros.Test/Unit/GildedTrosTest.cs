@@ -16,7 +16,7 @@ namespace GildedTros.Test.Unit
         [Fact]
         public void GildedTrosCtor_GivenListWithOneItem_ShouldContainOneItem()
         {
-            IList<Item> items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+            IList<IAgingItem> items = new List<IAgingItem> { new ItemNormal("foo") {SellIn = 0, Quality = 0 } };
             App.GildedTros app = new App.GildedTros(items);
 
             Assert.Equal(1, app.Items.Count);

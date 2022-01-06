@@ -19,19 +19,7 @@ namespace GildedTros.Test.Unit
             
             Assert.Equal(TestItems.SomeName,itemLegendary.Name);
         }
-
-        [Fact]
-        public void Age_GivenSomeQuality_ShouldNotChangeQuality()
-        {
-            var itemLegendary = new ItemLegendary(TestItems.SomeName)
-            {
-                Quality = TestItems.SomeQualityGreaterThanZero
-            };
-            
-            itemLegendary.Age();
-            
-            Assert.Equal(TestItems.SomeQualityGreaterThanZero,itemLegendary.Quality);
-        }
+        
         [Fact]
         public void Age_GivenSomeSellIn_ShouldNotChangeSellIn()
         {
@@ -45,19 +33,17 @@ namespace GildedTros.Test.Unit
             Assert.Equal(TestItems.SomeSellInGreaterThanZero,itemLegendary.SellIn);
         }
         [Fact]
-        public void AgeMultipleTimes_WithQualityFifty_ShouldMaxBeFifty()
+        public void Age_GivenSomeQuality_QualityShouldBeSetToEighty()
         {
             var itemLegendary = new ItemLegendary(TestItems.SomeName)
             {
-                Quality = 50,
+                Quality = TestItems.SomeQualityGreaterThanZero,
                 SellIn = 1
             };
             
             itemLegendary.Age();
-            itemLegendary.Age();
-            itemLegendary.Age();
 
-            Assert.Equal(50,itemLegendary.Quality);
+            Assert.Equal(80,itemLegendary.Quality);
         }
     }
 }

@@ -24,8 +24,16 @@ namespace GildedTros.App.Items
                 IsPassedSellIn = true;
                 QualitySpeed *=2 ;
             }
-            Quality = Math.Min(Quality + QualitySpeed,50);
+
+            Quality += QualitySpeed;
+            Quality = Math.Min(Quality,50);
+            Quality = Math.Max(Quality,0);
             SellIn -= 1;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
         }
     }
 }
