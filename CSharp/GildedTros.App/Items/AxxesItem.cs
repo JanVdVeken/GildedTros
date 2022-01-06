@@ -9,7 +9,7 @@ namespace GildedTros.App.Items
         public abstract void Age();
         public void Print()
         {
-            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
+            Console.WriteLine($"{Name}, {SellIn}, {Quality}");
         }
     }
 }

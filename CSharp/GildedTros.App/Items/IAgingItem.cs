@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GildedTros.App.Items
+﻿namespace GildedTros.App.Items
 {
     public interface IAgingItem
     {

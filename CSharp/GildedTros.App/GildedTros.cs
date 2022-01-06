@@ -18,5 +18,22 @@ namespace GildedTros.App
         {
             Items.ForEach(x => x.Age());
         }
+
+        public void Print()
+        {
+            Items.ForEach(x => x.Print());
+        }
+
+        public void ShowInventory(int amountOfDays)
+        {
+            for (var i = 0; i < amountOfDays; i++)
+            {
+                Console.WriteLine($"-------- day {i} --------");
+                Console.WriteLine("name, sellIn, quality");
+                Print();
+                Console.WriteLine("");
+                UpdateQuality();
+            }
+        }
     }
 }

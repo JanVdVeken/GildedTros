@@ -27,10 +27,5 @@ namespace GildedTros.App.Items
             Quality = Math.Min(50, Quality);
             SellIn--;
         }
-
-        public void Print()
-        {
-            
-        }
     }
 }
