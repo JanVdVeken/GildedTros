@@ -27,15 +27,8 @@ namespace GildedTros.App
             };
 
             var app = new GildedTros(items);
-
-            for (var i = 0; i < 31; i++)
-            {
-                Console.WriteLine($"-------- day {i} --------");
-                Console.WriteLine("name, sellIn, quality");
-                items.ForEach(x => x.Print());
-                Console.WriteLine("");
-                app.UpdateQuality();
-            }
+            app.ShowInventory(31);
+            
         }
     }
 }

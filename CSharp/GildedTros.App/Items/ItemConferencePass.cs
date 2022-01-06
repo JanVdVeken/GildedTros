@@ -16,7 +16,6 @@ namespace GildedTros.App.Items
         }
         public override void Age()
         {
-
             if (!_isIncreaseBelowTen && SellIn <= 10)
             {
                 _isIncreaseBelowTen = true;
