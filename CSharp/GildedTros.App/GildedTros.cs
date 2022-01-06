@@ -24,8 +24,7 @@ namespace GildedTros.App
                 }
                 else
                 {
-                    if (Items[i].Name != "Good Wine" 
-                    && Items[i].Name != "Backstage passes for Re:factor"
+                    if (Items[i].Name != "Backstage passes for Re:factor"
                     && Items[i].Name != "Backstage passes for HAXX")
                     {
                         if (Items[i].Quality > 0)
@@ -71,10 +70,8 @@ namespace GildedTros.App
 
                     if (Items[i].SellIn < 0)
                     {
-                        if (Items[i].Name != "Good Wine")
-                        {
-                            if (Items[i].Name != "Backstage passes for Re:factor"
-                                && Items[i].Name != "Backstage passes for HAXX")
+                        if (Items[i].Name != "Backstage passes for Re:factor"
+                            && Items[i].Name != "Backstage passes for HAXX")
                             {
                                 if (Items[i].Quality > 0)
                                 {
@@ -89,14 +86,6 @@ namespace GildedTros.App
                                 Items[i].Quality = Items[i].Quality - Items[i].Quality;
                             }
                         }
-                        else
-                        {
-                            if (Items[i].Quality < 50)
-                            {
-                                Items[i].Quality = Items[i].Quality + 1;
-                            }
-                        }
-                    }
                 }
             }
         }
