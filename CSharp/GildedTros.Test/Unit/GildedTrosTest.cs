@@ -18,7 +18,6 @@ namespace GildedTros.Test.Unit
         {
             IList<Item> items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
             App.GildedTros app = new App.GildedTros(items);
-            
 
             Assert.Equal(1, app.Items.Count);
         }
