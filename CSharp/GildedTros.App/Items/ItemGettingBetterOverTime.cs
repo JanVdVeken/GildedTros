@@ -25,7 +25,7 @@ namespace GildedTros.App.Items
             Quality += QualitySpeed;
             Quality = Math.Min(Quality, 50);
             Quality = Math.Max(Quality, 0);
-            SellIn -= 1;
+            SellIn --;
         }
     }
 }
