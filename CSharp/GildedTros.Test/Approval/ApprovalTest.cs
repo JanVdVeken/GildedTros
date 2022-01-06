@@ -3,24 +3,24 @@ using System.IO;
 using System.Text;
 using ApprovalTests;
 using ApprovalTests.Reporters;
-using GildedTros.App;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Xunit;
+using GildedTros.App;
 
-namespace GildedTros.Test
+namespace GildedTros.Test.Approval
 {
     [UseReporter(typeof(DiffReporter))]
     public class ApprovalTest
     {
-        //[Fact]
+        [Fact]
         public void ThirtyDays()
         {
-            var fakeoutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeoutput));
+            var fakeOutput = new StringBuilder();
+            Console.SetOut(new StringWriter(fakeOutput));
             Console.SetIn(new StringReader("a\n"));
-
-            Program.Main(new string[] { });
-            var output = fakeoutput.ToString();
+            
+            GildedTros.App.Program.Main(new string[] { });
+            var output = fakeOutput.ToString();
 
             Approvals.Verify(output);
         }
