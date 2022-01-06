@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using GildedTros.App;
 using Xunit;
 
-namespace GildedTros.Test
+namespace GildedTros.Test.Unit
 {
     public class GildedTrosTest
     {
