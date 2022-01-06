@@ -2,11 +2,8 @@
 
 namespace GildedTros.App.Items
 {
-    public class ItemNormal : Item, IAgingItem
+    public class ItemNormal : AxxesItem
     {
-        public int QualitySpeed { get; private protected set; }
-        public int SellInSpeed { get; }
-    
         private bool _isPassedSellIn;
     
         public ItemNormal(string name)
@@ -17,7 +14,7 @@ namespace GildedTros.App.Items
             SellInSpeed = -1;
         }
         
-        public void Age()
+        public override void Age()
         {
             
             if (!_isPassedSellIn && SellIn <= 0)
@@ -33,7 +30,7 @@ namespace GildedTros.App.Items
 
         public void Print()
         {
-            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
+            
         }
     }
 }

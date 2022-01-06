@@ -11,7 +11,7 @@ namespace GildedTros.App
         {
             Console.WriteLine("OMGHAI!");
 
-            IList<IAgingItem> Items = new List<IAgingItem>{
+            IList<IAgingItem> items = new List<IAgingItem>{
                 new ItemNormal("Ring of Cleansening Code") {SellIn = 10, Quality = 20},
                 new ItemGettingBetterOverTime("Good Wine") { SellIn = 2, Quality = 0},
                 new ItemNormal("Elixir of the SOLID") {SellIn = 5, Quality = 7},
@@ -26,14 +26,13 @@ namespace GildedTros.App
                 new ItemSmelly("Ugly Variable Names") {SellIn = 3, Quality = 6}
             };
 
-            var app = new GildedTros(Items);
-
+            var app = new GildedTros(items);
 
             for (var i = 0; i < 31; i++)
             {
-                Console.WriteLine("-------- day " + i + " --------");
+                Console.WriteLine($"-------- day {i} --------");
                 Console.WriteLine("name, sellIn, quality");
-                Items.ForEach(x => x.Print());
+                items.ForEach(x => x.Print());
                 Console.WriteLine("");
                 app.UpdateQuality();
             }

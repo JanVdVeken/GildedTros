@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using GildedTros.App;
 using GildedTros.App.Items;
 using Xunit;
 

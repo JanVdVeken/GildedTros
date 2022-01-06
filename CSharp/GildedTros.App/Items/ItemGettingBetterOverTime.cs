@@ -1,14 +1,10 @@
 ﻿using System;
-using Xunit;
-using Xunit.Sdk;
 
 namespace GildedTros.App.Items
 {
-    public class ItemGettingBetterOverTime : Item, IAgingItem
+    public class ItemGettingBetterOverTime : AxxesItem
     {
-        public int QualitySpeed { get; private set; }
-        public int SellInSpeed { get; private set; }
-        private bool IsPassedSellIn = false;
+        private bool _isPassedSellIn;
 
         public ItemGettingBetterOverTime(string name)
         {
@@ -17,23 +13,19 @@ namespace GildedTros.App.Items
             QualitySpeed = +1;
             SellInSpeed = -1;
         }
-        public void Age()
+
+        public override void Age()
         {
-            if (!IsPassedSellIn && SellIn <= 0)
+            if (!_isPassedSellIn && SellIn <= 0)
             {
-                IsPassedSellIn = true;
-                QualitySpeed *=2 ;
+                _isPassedSellIn = true;
+                QualitySpeed *= 2;
             }
 
             Quality += QualitySpeed;
-            Quality = Math.Min(Quality,50);
-            Quality = Math.Max(Quality,0);
+            Quality = Math.Min(Quality, 50);
+            Quality = Math.Max(Quality, 0);
             SellIn -= 1;
-        }
-
-        public void Print()
-        {
-            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
         }
     }
 }

@@ -2,10 +2,8 @@
 
 namespace GildedTros.App.Items
 {
-    public class ItemConferencePass : Item, IAgingItem
+    public class ItemConferencePass : AxxesItem
     {
-        public int QualitySpeed { get; private set; }
-        public int SellInSpeed { get; private set; }
         private bool _isIncreaseBelowTen = false;
         private bool _isIncreaseBelowFive = false;
 
@@ -16,7 +14,7 @@ namespace GildedTros.App.Items
             QualitySpeed = +1;
             SellInSpeed = -1;
         }
-        public void Age()
+        public override void Age()
         {
 
             if (!_isIncreaseBelowTen && SellIn <= 10)
@@ -36,11 +34,6 @@ namespace GildedTros.App.Items
             if (SellIn <= 0) Quality = 0;
             
             SellIn--;
-        }
-
-        public void Print()
-        {
-            Console.WriteLine(Name + ", " + SellIn + ", " + Quality);
         }
     }
 }

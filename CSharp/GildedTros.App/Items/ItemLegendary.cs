@@ -2,11 +2,8 @@
 
 namespace GildedTros.App.Items
 {
-    public class ItemLegendary : Item, IAgingItem
+    public class ItemLegendary : AxxesItem
     {
-        public int QualitySpeed { get; }
-        public int SellInSpeed { get; }
-
         public ItemLegendary(string name)
         {
             if (string.IsNullOrEmpty(name)) throw new ArgumentNullException();
@@ -14,7 +11,7 @@ namespace GildedTros.App.Items
             QualitySpeed = +0;
             SellInSpeed = -0;
         }
-        public void Age()
+        public override void Age()
         {
             Quality = 80;
             SellIn = SellIn;
