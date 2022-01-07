@@ -6,10 +6,8 @@ namespace GildedTros.App.Items
     {
         private bool _isPassedSellIn;
 
-        public ItemGettingBetterOverTime(string name)
+        public ItemGettingBetterOverTime(string name) : base(name)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException();
-            Name = name;
             QualitySpeed = +1;
             SellInSpeed = -1;
         }

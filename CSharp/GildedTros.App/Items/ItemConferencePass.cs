@@ -7,10 +7,8 @@ namespace GildedTros.App.Items
         private bool _isIncreaseBelowTen = false;
         private bool _isIncreaseBelowFive = false;
 
-        public ItemConferencePass(string name)
+        public ItemConferencePass(string name) : base(name)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException();
-            Name = name;
             QualitySpeed = +1;
             SellInSpeed = -1;
         }
